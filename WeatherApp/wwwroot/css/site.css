@@ -22,5 +22,19 @@ body {
 }
 
 .container #city_input {
-    max-width: 800px;
+    max-width: 600px;
 }
+
+.shadow {
+    -webkit-box-shadow: -1px 4px 25px -4px rgba(66, 68, 90, 0.74);
+    -moz-box-shadow: -1px 4px 25px -4px rgba(66, 68, 90, 0.74);
+    box-shadow: -1px 4px 25px -4px rgba(66, 68, 90, 0.74);
+}
+
+.hover-card {
+    transition: all .3s ease-in-out;
+}
+
+    .hover-card:hover {
+        transform: scale(1.05);
+    }

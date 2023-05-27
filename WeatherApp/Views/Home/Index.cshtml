@@ -3,15 +3,69 @@
 }
 
 <div class="text-center m-5">
-    <h1>Know Your Weather</h1>
-    <h4>Get ready for the day with the perfect forecast</h4>
-    <div class="container">
-        <img width="250" src="https://camo.githubusercontent.com/3fe29fc43c38800ca0179e32fd572fdb0c00c09ce0b91b9afb138bfbdb549021/68747470733a2f2f7068696c732e64657369676e2f776561746865722d69636f6e732f696d616765732f7376672f625f315f706172746c795f636c6f7564792e737667" alt="sun with clouds" />
+    @*<div class="container">
+            <img width="250" src="https://camo.githubusercontent.com/3fe29fc43c38800ca0179e32fd572fdb0c00c09ce0b91b9afb138bfbdb549021/68747470733a2f2f7068696c732e64657369676e2f776561746865722d69636f6e732f696d616765732f7376672f625f315f706172746c795f636c6f7564792e737667" alt="sun with clouds" />
+        </div>*@
+    <div class="container m-3">
+        <h1>Know Your Weather</h1>
+        <h4>Get ready for the day with the perfect forecast</h4>
     </div>
     <div class="input-group container" id="city_input">
         <input type="text" class="form-control" id="city" placeholder="Type your city here ..." aria-describedby="locationHelp" />
-        <button class="btn btn-primary" type="submit">Check weather</button>
+        <button class="btn btn-warning" type="submit">
+            Check weather
+        </button>
     </div>
     <div id="locationHelp" class="form-text">We'll never share your location with anyone else.</div>
+</div>
+<div class="row">
+    <div class="col-sm-3 mb-3 mb-sm-0">
+        <div class="card bg-light rounded rounded-2 shadow hover-card">
+            <div class="card-body">
+                <img src="https://basmilius.github.io/weather-icons/production/fill/all/overcast-day.svg" alt="rainy and sunny" width="80" />
+                <h5 class="card-title">New York</h5>
+                <p class="card-text">max: 23°C</p>
+                <p class="card-text">min: 20°C</p>
+                <p class="card-text">humidity: 14</p>
+                <a href="#" class="btn btn-secondary">Details</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="card bg-light rounded rounded-2 shadow hover-card">
+            <div class="card-body">
+                <img src="https://basmilius.github.io/weather-icons/production/fill/all/clear-day.svg" alt="rainy and sunny" width="80" />
+                <h5 class="card-title">Madrid</h5>
+                <p class="card-text">max: 29°C</p>
+                <p class="card-text">min: 25°C</p>
+                <p class="card-text">humidity: 30</p>
+                <a href="#" class="btn btn-secondary">Details</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="card bg-light rounded rounded-2 shadow hover-card">
+            <div class="card-body">
+                <img src="https://basmilius.github.io/weather-icons/production/fill/all/partly-cloudy-day-rain.svg" alt="rainy and sunny" width="80" />
+                <h5 class="card-title">Paris</h5>
+                <p class="card-text">max: 23°C</p>
+                <p class="card-text">min: 17°C</p>
+                <p class="card-text">humidity: 20</p>
+                <a href="#" class="btn btn-secondary">Details</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="card bg-light rounded rounded-2 shadow hover-card">
+            <div class="card-body">
+                <img src="https://basmilius.github.io/weather-icons/production/fill/all/thunderstorms-day.svg" alt="rainy and sunny" width="80" />
+                <h5 class="card-title">Warsaw</h5>
+                <p class="card-text">max: 18°C</p>
+                <p class="card-text">min: 17°C</p>
+                <p class="card-text">humidity: 12</p>
+                <a href="#" class="btn btn-secondary">Details</a>
+            </div>
+        </div>
+    </div>
 </div>
 
