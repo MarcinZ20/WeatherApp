@@ -1,0 +1,311 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "UserPanel";
+}
+
+<div class="container">
+    <div class="row py-3">
+        <div class="col-3 order-2" id="sticky-sidebar">
+            <div class="text-center rounded rounded-3 p-3 bg-light shadow mb-3 mt-3">
+                <h1>Warsaw</h1>
+                <p>31 May 2023</p>
+                <p>8:31 PM</p>
+            </div>
+            <div class="text-center rounded rounded-3 p-3 bg-light shadow">
+                <img class="img rounded rounded-5 p-2" src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?size=626&ext=jpg&ga=GA1.2.1485105489.1680129457&semt=location_fest_v1" alt="profile picture" width="80" />
+                <h3 class="text-primary">Kamil Kowalski</h3>
+                <i class="fa-solid fa-location-dot"></i>
+                <p class="text-secondary">Kraków</p>
+                <p>
+                    Hi, my name is Kamil and I like football!
+                </p>
+                <hr />
+                <h4>City to display</h4>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>City</option>
+                    <option value="1">Kraków</option>
+                    <option value="2">New York</option>
+                    <option value="3">Warsaw</option>
+                    <option value="4">Paris</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-9" id="main">
+            <div class="row p-3">
+                <div class="col">
+                    <div class="row g-2">
+                        <div class="col-6">
+                            <div class="p-3 rounded rounded-3 bg-light shadow">
+                                <div class="row">
+                                    <div class="col-8">
+                                        <p>Temp.</p>
+                                    </div>
+                                    <div class="col-4">
+                                        <img src="https://basmilius.github.io/weather-icons/production/fill/all/thermometer-celsius.svg" alt="temperature icon" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <h4>17°C</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="p-3 rounded rounded-3 bg-light shadow">
+                                <div class="row">
+                                    <div class="col-8">
+                                        <p>Wind</p>
+                                    </div>
+                                    <div class="col-4">
+                                        <img src="https://basmilius.github.io/weather-icons/production/fill/all/dust-wind.svg" alt="wind icon" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <h4>10km/h</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="p-3 rounded rounded-3 bg-light shadow">
+                                <div class="row">
+                                    <div class="col-8">
+                                        <p>Humidity</p>
+                                    </div>
+                                    <div class="col-4">
+                                        <img src="https://basmilius.github.io/weather-icons/production/fill/all/humidity.svg" alt="humidity icon" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <h4>20%</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="p-3 rounded rounded-3 bg-light shadow">
+                                <div class="row">
+                                    <div class="col-8">
+                                        <p>Pressure</p>
+                                    </div>
+                                    <div class="col-4">
+                                        <img src="https://basmilius.github.io/weather-icons/production/fill/all/barometer.svg" alt="pressure icon" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <h4>998hPa</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col text-center">
+                    <div class="p-3 rounded rounded-3 bg-light shadow">
+                        <div class="row p-2">
+                            <div class="col-4">
+                                <div class="p-1">Monday</div>
+                            </div>
+                            <div class="col-4">
+                                <div class="p-1">Tuesday</div>
+                            </div>
+                            <div class="col-4">
+                                <div class="p-1">Wednesday</div>
+                            </div>
+                        </div>
+                        <div class="row p-2">
+                            <div class="col-4">
+                                <div class="p-1">
+                                    <img src="https://basmilius.github.io/weather-icons/production/fill/all/partly-cloudy-day-rain.svg" alt="rainy" width="70" />
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="p-1">
+                                    <img src="https://basmilius.github.io/weather-icons/production/fill/all/partly-cloudy-day.svg" alt="part cloudy" width="70" />
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="p-1">
+                                    <img src="https://basmilius.github.io/weather-icons/production/fill/all/thunderstorms-day-rain.svg" alt="rainy" width="70" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row p-2">
+                            <div class="col-4">
+                                <div class="p-1">
+                                    <h3>11°C</h3>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="p-1">
+                                    <h3>14°C</h3>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="p-1">
+                                    <h3>13°C</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row p-3">
+                <div class="col-7">
+                    <div class="p-3 rounded rounded-3 bg-light shadow">
+                        <h3>Weather description</h3>
+                        <p>Today you can fully enjoy a beautiful day without any rain! Temperature will oscilate between 21°C and 27°C.</p>
+                        <p>However at night it will drop to about 11°C.</p>
+                    </div>
+                </div>
+                <div class="col-5">
+                    <div class="p-3 rounded rounded-3 bg-light shadow text-center">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="row">
+                                    <div class="col">
+                                        <p>Sunrise</p>
+                                        <img src="https://basmilius.github.io/weather-icons/production/fill/all/sunrise.svg" width="65" alt="sunrise" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <h3>6:32 AM</h3>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="row">
+                                    <div class="col">
+                                        <p>Sunset</p>
+                                        <img src="https://basmilius.github.io/weather-icons/production/fill/all/sunset.svg" width="65" alt="sunrise" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <h3>9:11 PM</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row p-3">
+                <div class="col-6">
+                    <div class="p-3 rounded rounded-3 bg-light shadow">
+                        <div class="row">
+                            <div class="col-2">
+                                <div class="p-2">
+                                    <img src="https://basmilius.github.io/weather-icons/production/fill/all/umbrella.svg" alt="umbrella" />
+                                </div>
+                            </div>
+                            <div class="col-7">
+                                <div class="p-2">
+                                    Chance for rain
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="p-2">
+                                    <h4>78%</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-2">
+                                <div class="p-2">
+                                    <img src="https://basmilius.github.io/weather-icons/production/fill/all/thermometer-glass-celsius.svg" alt="termometer" />
+                                </div>
+                            </div>
+                            <div class="col-7">
+                                <div class="p-2">
+                                    Feels like
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="p-2">
+                                    <h4>14°C</h4>
+                                </div>
+                            </div>
+                        </div>
+                        @*<div class="row">
+                                <div class="col-2">
+                                    <div class="p-2 bg-warning">
+                                        1
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="p-2 bg-warning">
+                                        2
+                                    </div>
+                                </div>
+                                <div class="col-8">
+                                    <div class="p-2 bg-warning">
+                                        3
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-2">
+                                    <div class="p-2 bg-warning">
+                                        1
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="p-2 bg-warning">
+                                        2
+                                    </div>
+                                </div>
+                                <div class="col-8">
+                                    <div class="p-2 bg-warning">
+                                        3
+                                    </div>
+                                </div>
+                            </div>*@
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="p-3 rounded rounded-3 bg-light shadow">
+                        <div class="row">
+                            <div class="col-8">
+                                <p>Cloud cover</p>
+                            </div>
+                            <div class="col-4">
+                                <img src="https://basmilius.github.io/weather-icons/production/fill/all/overcast.svg" alt="cloud cover icon" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <h4>20%</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="p-3 rounded rounded-3 bg-light shadow">
+                        <div class="row">
+                            <div class="col-8">
+                                <p>UV index</p>
+                            </div>
+                            <div class="col-4">
+                                <img src="https://basmilius.github.io/weather-icons/production/fill/all/uv-index.svg" alt="uv index icon" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <h4>20</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row p-5">
+                <div class="container">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

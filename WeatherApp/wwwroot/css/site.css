@@ -21,7 +21,7 @@ body {
     margin-bottom: 60px;
 }
 
-.container #city_input {
+#city_input {
     max-width: 600px;
 }
 
