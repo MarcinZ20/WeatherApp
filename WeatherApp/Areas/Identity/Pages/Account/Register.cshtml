@@ -1,0 +1,61 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="container bg-light rounded rounded-2 mt-5 p-3 shadow form-width">
+    <div class="container text-center">
+        <h2 class="text-secondary">Register</h2>
+    </div>
+    <form class="row g-3" id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+        <div class="col-md-8">
+            <label asp-for="Input.Email">Email</label>
+            <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
+            <span asp-validation-for="Input.Email" class="text-danger"></span>
+        </div>
+        <div class="col-md-4">
+            <label asp-for="Input.Name">Name</label>
+            <input asp-for="Input.Name" class="form-control" autocomplete="username" aria-required="true" placeholder="Alex" />
+            <span asp-validation-for="Input.Name" class="text-danger"></span>
+        </div>
+        <div class="col-md-6">
+            <label asp-for="Input.Password">Password</label>
+            <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" />
+            <span asp-validation-for="Input.Password" class="text-danger"></span>
+        </div>
+        <div class="col-md-6">
+            <label asp-for="Input.ConfirmPassword">Confirm Password</label>
+            <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" />
+            <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+        </div>
+        <div class="col-md-12">
+            <label asp-for="Input.City" class="form-label">City</label>
+            <input asp-for="Input.City" class="form-control" autocomplete="city" aria-required="true" placeholder="Paris">
+            <span asp-validation-for="Input.City" class="text-danger"></span>
+        </div>
+        <div class="col-md-8">
+            <label asp-for="Input.Country" class="form-label">Country</label>
+            <input asp-for="Input.Country" class="form-control" autocomplete="city" aria-required="true" placeholder="France">
+            <span asp-validation-for="Input.Country" class="text-danger"></span>
+        </div>
+        <div class="col-12">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="invalidCheck" required>
+                <label class="form-check-label" for="gridCheck">
+                    I accept the <a class="link-secondary">terms of privacy policy</a>
+                </label>
+            </div>
+        </div>
+        <div class="col-12">
+            <button id="registerSubmit" type="submit" class="btn-md btn btn-primary">Register</button>
+        </div>
+    </form>
+
+
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
