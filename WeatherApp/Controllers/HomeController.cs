@@ -23,6 +23,10 @@ public class HomeController : Controller
         return View();
     }
 
+    public IActionResult Login()
+    {
+        return ViewBag.Login;
+    }
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
