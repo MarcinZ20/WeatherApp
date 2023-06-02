@@ -2,8 +2,130 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<section class="hero text-center bg-light pb-5">
+    <div class="container m-auto p-3">
+        <h1 class="text-primary fw-bold display-3">Know Your Weather</h1>
+        <h3 class="text-secondary fw-light">Get ready for the day with the perfect forecast</h3>
+    </div>
+    <div class="d-grid gap-4 d-md-flex mx-auto justify-content-center" id="city_input">
+        <a class="btn btn-primary btn-lg">Sign up</a>
+        <a class="btn btn-outline-primary btn-lg">Log in</a>
+    </div>
+    <div class="row g-4 m-auto mt-3">
+        <div class="col-md-3">
+            <div class="p-3 card-element-warsaw h-100 rounded rounded-3 shadow hover-card position-relative" id="Warsaw">
+                <h3 class="text-white display-6 fw-bold">Warsaw</h3>
+                <p class="text-white fw-bold display-6">21°C</p>
+                <p class="text-white position-absolute top-50 fw-bold translate-middle start-50">Short weather forecast for the city of Warsaw</p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="p-3 card-element-paris rounded rounded-3 shadow hover-card position-relative" id="Paris">
+                <h3 class="text-white display-6 fw-bold">Paris</h3>
+                <p class="text-white fw-bold display-6">23°C</p>
+                <p class="text-white position-absolute top-50 fw-bold translate-middle start-50">Short weather forecast for the city of Paris</p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="p-3 card-element-newyork h-100 rounded rounded-3 shadow hover-card position-relative" id="NewYork">
+                <h3 class="text-white display-6 fw-bold">New York</h3>
+                <p class="text-white fw-bold display-6">14°C</p>
+                <p class="text-white position-absolute top-50 fw-bold translate-middle start-50">Short weather forecast for the city of New York</p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="p-3 card-element-tokio h-100 rounded rounded-3 shadow hover-card position-relative" id="Tokio">
+                <h3 class="text-white display-6 fw-bold">Tokio</h3>
+                <p class="text-white fw-bold display-6">17°C</p>
+                <p class="text-white position-absolute top-50 fw-bold translate-middle start-50">Short weather forecast for the city of Tokio</p>
+            </div>
+        </div>
+    </div>
+</section>
+<hr />
+<section class="h-100 text-center p-5 m-auto" id="about-us">
+    <div>
+        <h1 class="text-primary fw-bold display-2">About Us</h1>
+    </div>
+    <div class="row pb-2">
+        <div class="col-7">
+            <div class="p-3 bg-light rounded rounded-3 shadow">
+                @*<img class="image-fluid" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" />*@
+                <p>Image here</p>
+            </div>
+        </div>
+        <div class="col-5">
+            <div class="p-3 bg-light rounded rounded-3 shadow">
+                @*<img src="https://img.freepik.com/free-vector/digital-designers-team-drawing-with-pen-computer-monitor_74855-10586.jpg?w=900&t=st=1685718108~exp=1685718708~hmac=3716f82ce1797a8f3380c45fc37f8d76d8726cae4bef7b787a4bb23aa5e80083" />*@
+                <h2 class="text-secondary fw-bold display-5">Some heading</h2>
+                <p>Th</p>
+            </div>
+        </div>
+    </div>
+    <div class="row pt-2">
+        <div class="col-5">
+            <div class="p-3 bg-info rounded rounded-3 shadow">
+                @*<img src="https://img.freepik.com/free-vector/digital-designers-team-drawing-with-pen-computer-monitor_74855-10586.jpg?w=900&t=st=1685718108~exp=1685718708~hmac=3716f82ce1797a8f3380c45fc37f8d76d8726cae4bef7b787a4bb23aa5e80083" />*@
+                <p>Here text</p>
+            </div>
+        </div>
+        <div class="col-7">
+            <div class="p-3 bg-danger rounded rounded-3 shadow">
+                @*<img src="https://img.freepik.com/free-vector/digital-designers-team-drawing-with-pen-computer-monitor_74855-10586.jpg?w=900&t=st=1685718108~exp=1685718708~hmac=3716f82ce1797a8f3380c45fc37f8d76d8726cae4bef7b787a4bb23aa5e80083" />*@
+                <p>Here image</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+@*<div class="row pt-3">
+    <div class="col-sm-3 mb-3 mb-sm-0">
+        <div class="card bg-light rounded rounded-2 shadow hover-card">
+            <div class="card-body">
+                <img src="https://basmilius.github.io/weather-icons/production/fill/all/overcast-day.svg" alt="rainy and sunny" width="80" />
+                <h5 class="card-title">New York</h5>
+                <p class="card-text">max: 23°C</p>
+                <p class="card-text">min: 20°C</p>
+                <p class="card-text">humidity: 14</p>
+                <a href="#" class="btn btn-outline-primary">Details</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="card bg-light rounded rounded-2 shadow hover-card">
+            <div class="card-body">
+                <img src="https://basmilius.github.io/weather-icons/production/fill/all/clear-day.svg" alt="rainy and sunny" width="80" />
+                <h5 class="card-title">Madrid</h5>
+                <p class="card-text">max: 29°C</p>
+                <p class="card-text">min: 25°C</p>
+                <p class="card-text">humidity: 30</p>
+                <a href="#" class="btn btn-outline-primary">Details</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="card bg-light rounded rounded-2 shadow hover-card">
+            <div class="card-body">
+                <img src="https://basmilius.github.io/weather-icons/production/fill/all/partly-cloudy-day-rain.svg" alt="rainy and sunny" width="80" />
+                <h5 class="card-title">Paris</h5>
+                <p class="card-text">max: 23°C</p>
+                <p class="card-text">min: 17°C</p>
+                <p class="card-text">humidity: 20</p>
+                <a href="#" class="btn btn-outline-primary">Details</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="card bg-light rounded rounded-2 shadow hover-card">
+            <div class="card-body">
+                <img src="https://basmilius.github.io/weather-icons/production/fill/all/thunderstorms-day.svg" alt="rainy and sunny" width="80" />
+                <h5 class="card-title">Warsaw</h5>
+                <p class="card-text">max: 18°C</p>
+                <p class="card-text">min: 17°C</p>
+                <p class="card-text">humidity: 12</p>
+                <a href="#" class="btn btn-outline-primary">Details</a>
+            </div>
+        </div>
+    </div>
+</div>*@
 
