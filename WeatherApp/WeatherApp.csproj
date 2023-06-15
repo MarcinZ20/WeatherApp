@@ -19,4 +19,10 @@
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.6" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="Views\UserPanel\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\UserPanel\" />
+  </ItemGroup>
 </Project>
