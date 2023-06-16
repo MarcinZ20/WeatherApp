@@ -15,7 +15,7 @@
             </div>
             <div class="text-center rounded rounded-3 p-3 bg-light shadow">
                 <img class="img rounded rounded-5 p-2" src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?size=626&ext=jpg&ga=GA1.2.1485105489.1680129457&semt=location_fest_v1" alt="profile picture" width="80" />
-                <h3 class="text-primary">Kamil Kowalski</h3>
+                <h3 class="text-primary">Kamil</h3>
                 <i class="fa-solid fa-location-dot"></i>
                 <p class="text-secondary">Kraków</p>
                 <p>
@@ -23,13 +23,15 @@
                 </p>
                 <hr />
                 <h4>City to display</h4>
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>City</option>
-                    <option value="1">Kraków</option>
-                    <option value="2">New York</option>
-                    <option value="3">Warsaw</option>
-                    <option value="4">Paris</option>
-                </select>
+                <form method="post" action="/UserPanel/Index">
+                    <select name="city" class="form-select mb-3" aria-label="Default select example">
+                        <option selected value="Tokyo">Tokyo</option>
+                        <option value="New York">New York</option>
+                        <option value="Warsaw">Warsaw</option>
+                        <option value="Paris">Paris</option>
+                    </select>
+                    <button class="btn btn-primary w-100" type="submit">Submit</button>
+                </form>
             </div>
         </div>
         <div class="col-9" id="main">
@@ -48,7 +50,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <h4>@ViewData["T"] °C</h4>
+                                        <h4>@ViewData["T"]°C</h4>
                                     </div>
                                 </div>
                             </div>
@@ -82,7 +84,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <h4>@ViewData["H"] %</h4>
+                                        <h4>@ViewData["H"]%</h4>
                                     </div>
                                 </div>
                             </div>
@@ -222,4 +224,4 @@
             </div>
         </div>
     </div>
-
+</div>

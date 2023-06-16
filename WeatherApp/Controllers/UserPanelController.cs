@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WeatherApp.Areas.Identity.Data;
+using System.Text.Encodings.Web;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -13,13 +14,12 @@ namespace WeatherApp.Controllers
     [Authorize]
     public class UserPanelController : Controller
     {
+
         // GET: /<controller>/
-        public IActionResult Index()
+        public IActionResult Index(string city = "Warsaw")
         {
-            UserPanelModel model = Database_controller.ListUserPanel("Warsaw");
-
-            List<HourlyModel> mod = Database_controller.ListHourly("Warsaw");
-
+            UserPanelModel model = Database_controller.ListUserPanel(city);
+            List<HourlyModel> mod = Database_controller.ListHourly(city);
 
             ViewData["T"] = ParseTemperature(model.temp);
             ViewData["W"] = model.wind;
@@ -41,6 +41,14 @@ namespace WeatherApp.Controllers
             ViewData["data"] = DateTime.Now.ToString("dd/MM/yyyy");
 
             return View();
+        }
+
+        // GET: /UserPanel/city
+        [HttpPost]
+        public string City(string city)
+        {
+
+            return $"This is for {city}";
         }
 
         private static string ParseTemperature(string temp)
