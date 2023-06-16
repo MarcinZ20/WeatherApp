@@ -8,58 +8,37 @@
         <h3 class="text-secondary fw-light">Get ready for the day with the perfect forecast</h3>
     </div>
     <div class="d-grid gap-4 d-md-flex mx-auto justify-content-center" id="city_input">
-        <a class="btn btn-primary btn-lg">Sign up</a>
-        <a class="btn btn-outline-primary btn-lg">Log in</a>
+        <a class="btn btn-primary btn-lg" href="/Identity/Account/Register">Sign up</a>
+        <a class="btn btn-outline-primary btn-lg" href="/Identity/Account/Login">Log in</a>
     </div>
     <div class="row g-4 m-auto mt-3">
         <div class="col-md-3">
             <div class="p-3 card-element-warsaw h-100 rounded rounded-3 shadow hover-card position-relative" id="Warsaw">
                 <h3 class="text-white display-6 fw-bold">Warsaw</h3>
-                <p class="text-white fw-bold display-6">@ViewData["Warsaw"] °C</p>
-                <p class="text-white position-absolute top-50 fw-bold translate-middle start-50">Short weather forecast for the city of Warsaw</p>
+                <p class="text-white fw-bold display-6">@ViewData["Warsaw"]°C</p>
+                <p class="text-white position-absolute top-50 fw-bold translate-middle start-50">Feels like: @ViewData["Wfeels"]°C<br />Humidity: @ViewData["Whum"]%<br />Pressure: @ViewData["Wpress"]hPa</p>
             </div>
         </div>
         <div class="col-md-3">
             <div class="p-3 card-element-paris rounded rounded-3 shadow hover-card position-relative" id="Paris">
                 <h3 class="text-white display-6 fw-bold">Paris</h3>
-                <p class="text-white fw-bold display-6">@ViewData["Paris"] °C</p>
-                <p class="text-white position-absolute top-50 fw-bold translate-middle start-50">Short weather forecast for the city of Paris</p>
+                <p class="text-white fw-bold display-6">@ViewData["Paris"]°C</p>
+                <p class="text-white position-absolute top-50 fw-bold translate-middle start-50">Feels like: @ViewData["Pfeels"]°C<br />Humidity: @ViewData["Phum"]%<br />Pressure: @ViewData["Ppress"]hPa</p>
             </div>
         </div>
         <div class="col-md-3">
             <div class="p-3 card-element-newyork h-100 rounded rounded-3 shadow hover-card position-relative" id="NewYork">
                 <h3 class="text-white display-6 fw-bold">New York</h3>
-                <p class="text-white fw-bold display-6">@ViewData["NewYork"] °C</p>
-                <p class="text-white position-absolute top-50 fw-bold translate-middle start-50">Short weather forecast for the city of New York</p>
+                <p class="text-white fw-bold display-6">@ViewData["NewYork"]°C</p>
+                <p class="text-white position-absolute top-50 fw-bold translate-middle start-50">Feels like: @ViewData["Nfeels"]°C<br />Humidity: @ViewData["Nhum"]%<br />Pressure: @ViewData["Npress"]hPa</p>
             </div>
         </div>
         <div class="col-md-3">
             <div class="p-3 card-element-tokio h-100 rounded rounded-3 shadow hover-card position-relative" id="Tokio">
                 <h3 class="text-white display-6 fw-bold">Tokio</h3>
-                <p class="text-white fw-bold display-6">@ViewData["Tokyo"] °C</p>
-                <p class="text-white position-absolute top-50 fw-bold translate-middle start-50">Short weather forecast for the city of Tokio</p>
+                <p class="text-white fw-bold display-6">@ViewData["Tokyo"]°C</p>
+                <p class="text-white position-absolute top-50 fw-bold translate-middle start-50">Feels like: @ViewData["Tfeels"]°C<br />Humidity: @ViewData["Thum"]%<br />Pressure: @ViewData["Tpress"]hPa</p>
             </div>
         </div>
     </div>
 </section>
-
-@*<div class="text-center">
-        <table>
-            <thead>
-                <tr>
-                    <td>#</td>
-                    <td>Email</td>
-                    <td>Content</td>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in (ViewData["Hourly"] as List<HourlyModel>)!)
-                {
-                    <tr>
-                        <td>@item.data </td>
-                        <td>@item.temp </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-    </div>*@

@@ -16,12 +16,26 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        ViewData["Warsaw"] = Database_controller.ListRecords()[0].Temp;
-        ViewData["Paris"] = Database_controller.ListRecords()[1].Temp;
-        ViewData["NewYork"] = Database_controller.ListRecords()[2].Temp;
-        ViewData["Tokyo"] = Database_controller.ListRecords()[3].Temp;
+        ViewData["Warsaw"] = ParseTemperature(Database_controller.ListRecords()[0].Temp);
+        ViewData["Paris"] = ParseTemperature(Database_controller.ListRecords()[1].Temp);
+        ViewData["NewYork"] = ParseTemperature(Database_controller.ListRecords()[2].Temp);
+        ViewData["Tokyo"] = ParseTemperature(Database_controller.ListRecords()[3].Temp);
 
-        ViewData["Hourly"] = Database_controller.ListHourly();
+        ViewData["Wfeels"] = ParseTemperature(Database_controller.ListRecords()[0].Feels);
+        ViewData["Pfeels"] = ParseTemperature(Database_controller.ListRecords()[1].Feels);
+        ViewData["Nfeels"] = ParseTemperature(Database_controller.ListRecords()[2].Feels);
+        ViewData["Tfeels"] = ParseTemperature(Database_controller.ListRecords()[3].Feels);
+
+        ViewData["Whum"] = ParseTemperature(Database_controller.ListRecords()[0].Humidity);
+        ViewData["Phum"] = ParseTemperature(Database_controller.ListRecords()[1].Humidity);
+        ViewData["Nhum"] = ParseTemperature(Database_controller.ListRecords()[2].Humidity);
+        ViewData["Thum"] = ParseTemperature(Database_controller.ListRecords()[3].Humidity);
+
+        ViewData["Wpress"] = ParseTemperature(Database_controller.ListRecords()[0].Pressure);
+        ViewData["Ppress"] = ParseTemperature(Database_controller.ListRecords()[1].Pressure);
+        ViewData["Npress"] = ParseTemperature(Database_controller.ListRecords()[2].Pressure);
+        ViewData["Tpress"] = ParseTemperature(Database_controller.ListRecords()[3].Pressure);
+
         return View();
     }
 
@@ -39,6 +53,11 @@ public class HomeController : Controller
     public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+    }
+
+    private static string ParseTemperature(string temp)
+    {
+        return Convert.ToInt64(double.Parse(temp.Replace('.', ','))).ToString();
     }
 }
 
