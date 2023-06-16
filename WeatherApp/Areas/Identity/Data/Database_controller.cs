@@ -23,7 +23,7 @@ public class Database_controller
 
         
 
-        var lista = new List<String>(){"756135",  "2988507", "5128581", "1850147"};
+        var lista = new List<String>(){"756135",  "2988507", "5128581", "1850147", "3094802"};
         var miasta = new List<String>(){"Warsaw"};
 
         foreach (String miasto in lista)
