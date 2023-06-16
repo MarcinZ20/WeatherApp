@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WeatherApp.Areas.Identity.Data;
 
@@ -9,17 +10,18 @@ using WeatherApp.Areas.Identity.Data;
 
 namespace WeatherApp.Controllers
 {
+    [Authorize]
     public class UserPanelController : Controller
     {
         // GET: /<controller>/
         public IActionResult Index()
         {
-            UserPanelModel model =  Database_controller.ListUserPanel("Warsaw");
+            UserPanelModel model = Database_controller.ListUserPanel("Warsaw");
 
             List<HourlyModel> mod = Database_controller.ListHourly("Warsaw");
 
 
-            ViewData["T"] = model.temp;
+            ViewData["T"] = ParseTemperature(model.temp);
             ViewData["W"] = model.wind;
             ViewData["P"] = model.pressure;
             ViewData["H"] = model.humidity;
@@ -29,15 +31,21 @@ namespace WeatherApp.Controllers
             ViewData["rain"] = model.rain_perc;
             ViewData["des"] = model.description;
 
-            ViewData["miasto"]  =model.miasto;
+            ViewData["miasto"] = model.miasto;
 
-            ViewData["today"] = mod[1].temp;
-            ViewData["tom"] = mod[9].temp;
-            ViewData["atom"] = mod[17].temp;
+            ViewData["today"] = ParseTemperature(mod[1].temp);
+            ViewData["tom"] = ParseTemperature(mod[9].temp);
+            ViewData["atom"] = ParseTemperature(mod[17].temp);
 
             ViewData["czas"] = DateTime.Now.ToString("hh:mm tt");
             ViewData["data"] = DateTime.Now.ToString("dd/MM/yyyy");
+
             return View();
+        }
+
+        private static string ParseTemperature(string temp)
+        {
+            return Convert.ToInt64(double.Parse(temp)).ToString();
         }
     }
 }
