@@ -20,18 +20,18 @@ namespace WeatherApp.Controllers
         string LocalizationID { get; set; }
         static HttpClient httpclient { get; set; }
 
-        public WeatherWebApiClient(string path,string apikey,string localizationId)    //konstruktor przyjmujący adres serwera to odpytania
+        public WeatherWebApiClient(string path, string apikey, string localizationId)    //konstruktor przyjmujący adres serwera to odpytania
         {
             Path = path;
             ApiKey = apikey;
             LocalizationID = localizationId;
-            httpclient =new HttpClient();
-            httpclient.BaseAddress =new Uri (Path);
+            httpclient = new HttpClient();
+            httpclient.BaseAddress = new Uri(Path);
         }
 
         public WeatherWebApiClient()    //konstruktor nie przyjmujący argumentów, w ciele tej metody możemy zainicjalizować atrybuty
         {                               // np. z pliku ustawień aplikacji.
-            
+
             httpclient = new HttpClient();
         }
 
@@ -41,28 +41,28 @@ namespace WeatherApp.Controllers
             string weatherString = string.Empty;
             try
             {
-                HttpResponseMessage response = await httpclient.GetAsync("?id="+LocalizationID+"&APPID="+ApiKey+"&units=metric");
+                HttpResponseMessage response = await httpclient.GetAsync("?id=" + LocalizationID + "&APPID=" + ApiKey + "&units=metric");
                 if (response.IsSuccessStatusCode)
                 {
                     weatherString = await response.Content.ReadAsStringAsync(); //odczytujemy odpowiedź
-                    
+
                 }
 
-                if(weatherString!=string.Empty)
+                if (weatherString != string.Empty)
                 {
                     var parsedObject = JObject.Parse(weatherString);    //Tworzymy JObject
                     var menuJson = parsedObject["main"].ToString();     //Wycinamy kawałek odpowiedzialny za obiekt który nas intersuje
                     weather = JsonConvert.DeserializeObject<WeatherModel>(menuJson); //Deserializujemy nasz JSON
                 }
-               // return weatherString + "  "+response.StatusCode +" klucz:"+ ApiKey + httpclient.BaseAddress;
+                // return weatherString + "  "+response.StatusCode +" klucz:"+ ApiKey + httpclient.BaseAddress;
 
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Debug.WriteLine("Błąd: " + e.Message);
             }
 
-                return weather;
+            return weather;
         }
 
         public async Task<List<HourlyModel>> GetWeatherHourlyAsync()
@@ -71,20 +71,21 @@ namespace WeatherApp.Controllers
             string weatherString = string.Empty;
             try
             {
-                HttpResponseMessage response = await httpclient.GetAsync("?id="+LocalizationID+"&APPID="+ApiKey+"&units=metric");
+                HttpResponseMessage response = await httpclient.GetAsync("?id=" + LocalizationID + "&APPID=" + ApiKey + "&units=metric");
                 if (response.IsSuccessStatusCode)
                 {
                     weatherString = await response.Content.ReadAsStringAsync(); //odczytujemy odpowiedź
-                    
+
                 }
 
-                if(weatherString!=string.Empty)
+                if (weatherString != string.Empty)
                 {
                     var parsedObject = JObject.Parse(weatherString);    //Tworzymy JObject
                     List<String> Temps = new List<String>();
                     List<String> Dates = new List<String>();
-                    foreach(var record in parsedObject["list"]){
-                        
+                    foreach (var record in parsedObject["list"])
+                    {
+
                         Temps.Add(record["main"]["temp"].ToString());
                         Dates.Add(record["dt_txt"].ToString());
 
@@ -93,22 +94,20 @@ namespace WeatherApp.Controllers
                         temp.data = record["dt_txt"].ToString();
 
                         weather.Add(temp);
-
-
                     }
 
                     //weather = JsonConvert.DeserializeObject<List<HourlyModel>>(resultSequence); //Deserializujemy nasz JSON
                 }
-               // return weatherString + "  "+response.StatusCode +" klucz:"+ ApiKey + httpclient.BaseAddress;
+                // return weatherString + "  "+response.StatusCode +" klucz:"+ ApiKey + httpclient.BaseAddress;
 
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Debug.WriteLine("Błąd: " + e.Message);
             }
 
-                return weather;
+            return weather;
         }
-        
+
     }
 }

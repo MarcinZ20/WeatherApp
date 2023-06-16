@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using WeatherApp.Areas.Identity.Data;
 using WeatherApp.Models;
 
 namespace WeatherApp.Controllers;

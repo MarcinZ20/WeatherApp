@@ -42,110 +42,24 @@
         </div>
     </div>
 </section>
-<hr />
-<section class="h-100 text-center p-5 m-auto" id="about-us">
-    <div>
-        <h1 class="text-primary fw-bold display-2">About Us</h1>
-    </div>
-    <div class="row pb-2">
-        <div class="col-7">
-            <div class="p-3 bg-light rounded rounded-3 shadow">
-                @*<img class="image-fluid" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" />*@
-                <p>Image here</p>
-            </div>
-        </div>
-        <div class="col-5">
-            <div class="p-3 bg-light rounded rounded-3 shadow">
-                @*<img src="https://img.freepik.com/free-vector/digital-designers-team-drawing-with-pen-computer-monitor_74855-10586.jpg?w=900&t=st=1685718108~exp=1685718708~hmac=3716f82ce1797a8f3380c45fc37f8d76d8726cae4bef7b787a4bb23aa5e80083" />*@
-                <h2 class="text-secondary fw-bold display-5">Some heading</h2>
-                <p>Th</p>
-            </div>
-        </div>
-    </div>
-    <div class="row pt-2">
-        <div class="col-5">
-            <div class="p-3 bg-info rounded rounded-3 shadow">
-                @*<img src="https://img.freepik.com/free-vector/digital-designers-team-drawing-with-pen-computer-monitor_74855-10586.jpg?w=900&t=st=1685718108~exp=1685718708~hmac=3716f82ce1797a8f3380c45fc37f8d76d8726cae4bef7b787a4bb23aa5e80083" />*@
-                <p>Here text</p>
-            </div>
-        </div>
-        <div class="col-7">
-            <div class="p-3 bg-danger rounded rounded-3 shadow">
-                @*<img src="https://img.freepik.com/free-vector/digital-designers-team-drawing-with-pen-computer-monitor_74855-10586.jpg?w=900&t=st=1685718108~exp=1685718708~hmac=3716f82ce1797a8f3380c45fc37f8d76d8726cae4bef7b787a4bb23aa5e80083" />*@
-                <p>Here image</p>
-            </div>
-        </div>
-    </div>
-    <div class="text-center">
-    <table>
-        <thead>
-        <tr>
-            <td>#</td>
-            <td>Email</td>
-            <td>Content</td>
-        </tr>
-        </thead>
-        <tbody>
-        @foreach (var item in (ViewData["Hourly"] as List<HourlyModel>)!)
-        {
-            <tr>
-                <td>@item.data </td>
-                <td>@item.temp </td>
-            </tr>
-        }
-        </tbody>
-    </table>    
-    </div>
-</section>
 
-@*<div class="row pt-3">
-    <div class="col-sm-3 mb-3 mb-sm-0">
-        <div class="card bg-light rounded rounded-2 shadow hover-card">
-            <div class="card-body">
-                <img src="https://basmilius.github.io/weather-icons/production/fill/all/overcast-day.svg" alt="rainy and sunny" width="80" />
-                <h5 class="card-title">New York</h5>
-                <p class="card-text">max: 23°C</p>
-                <p class="card-text">min: 20°C</p>
-                <p class="card-text">humidity: 14</p>
-                <a href="#" class="btn btn-outline-primary">Details</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-3">
-        <div class="card bg-light rounded rounded-2 shadow hover-card">
-            <div class="card-body">
-                <img src="https://basmilius.github.io/weather-icons/production/fill/all/clear-day.svg" alt="rainy and sunny" width="80" />
-                <h5 class="card-title">Madrid</h5>
-                <p class="card-text">max: 29°C</p>
-                <p class="card-text">min: 25°C</p>
-                <p class="card-text">humidity: 30</p>
-                <a href="#" class="btn btn-outline-primary">Details</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-3">
-        <div class="card bg-light rounded rounded-2 shadow hover-card">
-            <div class="card-body">
-                <img src="https://basmilius.github.io/weather-icons/production/fill/all/partly-cloudy-day-rain.svg" alt="rainy and sunny" width="80" />
-                <h5 class="card-title">Paris</h5>
-                <p class="card-text">max: 23°C</p>
-                <p class="card-text">min: 17°C</p>
-                <p class="card-text">humidity: 20</p>
-                <a href="#" class="btn btn-outline-primary">Details</a>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-3">
-        <div class="card bg-light rounded rounded-2 shadow hover-card">
-            <div class="card-body">
-                <img src="https://basmilius.github.io/weather-icons/production/fill/all/thunderstorms-day.svg" alt="rainy and sunny" width="80" />
-                <h5 class="card-title">Warsaw</h5>
-                <p class="card-text">max: 18°C</p>
-                <p class="card-text">min: 17°C</p>
-                <p class="card-text">humidity: 12</p>
-                <a href="#" class="btn btn-outline-primary">Details</a>
-            </div>
-        </div>
-    </div>
-</div>*@
-
+@*<div class="text-center">
+        <table>
+            <thead>
+                <tr>
+                    <td>#</td>
+                    <td>Email</td>
+                    <td>Content</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in (ViewData["Hourly"] as List<HourlyModel>)!)
+                {
+                    <tr>
+                        <td>@item.data </td>
+                        <td>@item.temp </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>*@
