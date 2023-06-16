@@ -1,4 +1,4 @@
-﻿@*
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
@@ -9,9 +9,9 @@
     <div class="row py-3">
         <div class="col-3 order-2" id="sticky-sidebar">
             <div class="text-center rounded rounded-3 p-3 bg-light shadow mb-3 mt-3">
-                <h1>Warsaw</h1>
-                <p>31 May 2023</p>
-                <p>8:31 PM</p>
+                <h1>@ViewData["miasto"]</h1>
+                <p>@ViewData["data"]</p>
+                <p>@ViewData["czas"]</p>
             </div>
             <div class="text-center rounded rounded-3 p-3 bg-light shadow">
                 <img class="img rounded rounded-5 p-2" src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?size=626&ext=jpg&ga=GA1.2.1485105489.1680129457&semt=location_fest_v1" alt="profile picture" width="80" />
@@ -48,7 +48,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <h4>17°C</h4>
+                                        <h4>@ViewData["T"] °C</h4>
                                     </div>
                                 </div>
                             </div>
@@ -65,7 +65,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <h4>10km/h</h4>
+                                        <h4>@ViewData["W"] km/h</h4>
                                     </div>
                                 </div>
                             </div>
@@ -82,7 +82,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <h4>20%</h4>
+                                        <h4>@ViewData["H"] %</h4>
                                     </div>
                                 </div>
                             </div>
@@ -99,7 +99,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                        <h4>998hPa</h4>
+                                        <h4>@ViewData["P"] hPa</h4>
                                     </div>
                                 </div>
                             </div>
@@ -110,13 +110,13 @@
                     <div class="p-3 rounded rounded-3 bg-light shadow">
                         <div class="row p-2">
                             <div class="col-4">
-                                <div class="p-1">Monday</div>
+                                <div class="p-1">Today</div>
                             </div>
                             <div class="col-4">
-                                <div class="p-1">Tuesday</div>
+                                <div class="p-1">Tommorow</div>
                             </div>
                             <div class="col-4">
-                                <div class="p-1">Wednesday</div>
+                                <div class="p-1">After tommorow</div>
                             </div>
                         </div>
                         <div class="row p-2">
@@ -139,17 +139,17 @@
                         <div class="row p-2">
                             <div class="col-4">
                                 <div class="p-1">
-                                    <h3>11°C</h3>
+                                    <h3>@ViewData["today"] °C</h3>
                                 </div>
                             </div>
                             <div class="col-4">
                                 <div class="p-1">
-                                    <h3>14°C</h3>
+                                    <h3>@ViewData["tom"] °C</h3>
                                 </div>
                             </div>
                             <div class="col-4">
                                 <div class="p-1">
-                                    <h3>13°C</h3>
+                                    <h3>@ViewData["atom"] °C</h3>
                                 </div>
                             </div>
                         </div>
@@ -160,8 +160,7 @@
                 <div class="col-7">
                     <div class="p-3 rounded rounded-3 bg-light shadow">
                         <h3>Weather description</h3>
-                        <p>Today you can fully enjoy a beautiful day without any rain! Temperature will oscilate between 21°C and 27°C.</p>
-                        <p>However at night it will drop to about 11°C.</p>
+                        <p>@ViewData["des"]</p>
                     </div>
                 </div>
                 <div class="col-5">
@@ -175,7 +174,7 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <h3>6:32 AM</h3>
+                                    <h3>@ViewData["sunrise"]</h3>
                                 </div>
                             </div>
                             <div class="col-6">
@@ -186,7 +185,7 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <h3>9:11 PM</h3>
+                                    <h3>@ViewData["sunset"]</h3>
                                 </div>
                             </div>
                         </div>
@@ -204,12 +203,12 @@
                             </div>
                             <div class="col-7">
                                 <div class="p-2">
-                                    Chance for rain
+                                    Rain fall
                                 </div>
                             </div>
                             <div class="col-3">
                                 <div class="p-2">
-                                    <h4>78%</h4>
+                                    <h4>@ViewData["rain"] mm</h4>
                                 </div>
                             </div>
                         </div>
@@ -278,7 +277,7 @@
                         </div>
                         <div class="row">
                             <div class="col">
-                                <h4>20%</h4>
+                                <h4>@ViewData["cloud"] %</h4>
                             </div>
                         </div>
                     </div>
