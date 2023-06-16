@@ -42,5 +42,7 @@ app.MapControllerRoute(
 
 app.MapRazorPages();
 
+Database_controller.Init();
+
 app.Run();
 

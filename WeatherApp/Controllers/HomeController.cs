@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using WeatherApp.Areas.Identity.Data;
 using WeatherApp.Models;
 
 namespace WeatherApp.Controllers;
@@ -15,6 +16,12 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+        ViewData["Warsaw"] = Database_controller.ListRecords()[0].Temp;
+        ViewData["Paris"] = Database_controller.ListRecords()[1].Temp;
+        ViewData["NewYork"] = Database_controller.ListRecords()[2].Temp;
+        ViewData["Tokyo"] = Database_controller.ListRecords()[3].Temp;
+
+        ViewData["Hourly"] = Database_controller.ListHourly();
         return View();
     }
 
